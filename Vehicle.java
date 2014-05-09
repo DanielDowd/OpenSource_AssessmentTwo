@@ -1,12 +1,23 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
+package carrental;
+
+/**
+ *
+ * @author Daniel
+ */
 public class Vehicle {
 	private String			manufacturer;
 	private String			model;
-	private int				makeYear;
+	private int			makeYear;
 
 	private Journey			journey;
 	
-	@SuppressWarnings("unused")
+	//removed @SuppressWarnings("unused")
 	private FuelPurchase	fuelPurchase;
 
 	/**
@@ -17,7 +28,7 @@ public class Vehicle {
 		this.model = "ITWEB";
 		this.makeYear = 2014;
 		journey = new Journey();
-		fuelPurchase = new FuelPurchase(125.6);
+		fuelPurchase = new FuelPurchase(75,100);    //First number is fuelPrice, second is fuelAmount - Kristian
 	}
 
 	/**
@@ -33,7 +44,7 @@ public class Vehicle {
 		this.model = model;
 		this.makeYear = makeYear;
 		journey = new Journey();
-		fuelPurchase = new FuelPurchase(125.6);
+		fuelPurchase = new FuelPurchase(75,100);  //First number is fuelPrice, second is fuelAmount - Kristian
 	}
 
 	/**
@@ -44,7 +55,9 @@ public class Vehicle {
 		System.out.println("Model: " + model);
 		System.out.println("Make Year: " + makeYear);
 		System.out.println("Total Kilometers Travelled: " + journey.getKilometers());
+                System.out.println(" Total fuel cost: $" + fuelPurchase.getTotalCost());    //Print total fuel cost - Kristian
 		System.out.println("Total Services: " + journey.getTotalServices());
+                System.out.println("Fuel Economy: " + fuelPurchase.getFuelEconomy() + " litres per 100km"); //Print fuel economy - Kristian
 	}
 
 	/**
